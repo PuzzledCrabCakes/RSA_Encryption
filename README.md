@@ -1,4 +1,5 @@
 # RSA Cryptography Cipher
+
 This Python script implements a basic RSA (Rivest–Shamir–Adleman) encryption and decryption tool. It allows users to generate keys using two prime numbers and a public exponent, then perform simple text-to-number substitutions and RSA transformations.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -20,9 +21,9 @@ Public Key (e)
 
 Example Execution:
 
-'''
+```
 python main.py 3 11 7
-'''
+```
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Important Notes
