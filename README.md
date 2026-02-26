@@ -24,8 +24,36 @@ Example Execution:
 ```
 python main.py 3 11 7
 ```
+
+Eample Output:
+
+```
+Welcome to the RSA cryptography cipher!
+Would you like to encrypt or decrypt?
+1. Encrypt
+2. Decrypt
+3. Quit
+
+1
+What is your phrase: I Like RSA
+Letter to number -->: 9 32 12 9 11 5 32 18 19 1
+Encrypted RSA Code: 15 32 12 15 11 14 32 6 13 1
+
+-------------------------------------------------------------------------------------------------
+Welcome to the RSA cryptography cipher!
+Would you like to encrypt or decrypt?
+1. Encrypt
+2. Decrypt
+3. Quit
+
+2
+What is your encyrpted phrase: 15 32 12 15 11 14 32 6 13 1
+Decoded message: i like rsa
+
+-------------------------------------------------------------------------------------------------
+```
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Important Notes
-[!WARNING]
+## Important Notes
+Warning:
 This is an educational implementation. In this version, the private key d is found using a simple incrementing loop, which is inefficient for large numbers. Additionally, the character mapping is custom (a=1, b=2, etc.) rather than standard ASCII/UTF-8.
