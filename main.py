@@ -10,6 +10,14 @@ def main():
 
 
 def menu(n: int, e: int, d: int) -> None:
+    '''
+    Simple menu function that displays options upon start up.
+
+    Parameters:
+    - n (int): product of primes
+    - e (int): public key
+    - d (int): private key
+    '''
     user_input = ""
     while True:
         print("Welcome to the RSA cryptography cipher!")
@@ -27,7 +35,18 @@ def menu(n: int, e: int, d: int) -> None:
         else:
             raise ValueError("Invalid option, please choose 1, 2, or 3.")
 
-def RSA_cryptography(p: int, q: int, e: int):
+def RSA_cryptography(p: int, q: int, e: int) -> tuple[int, int, int]:
+    '''
+    Simple function to calculate the necessary information to perform the other functions.
+
+    Parameters:
+    - p (int): Prime number 1
+    - q (int): Prime number 2
+    - e (int): public key
+
+    Returns:
+    tuple[n, e, d]: Returns the product of primes, the public key, and the private key.
+    '''
     n = p*q
     phi = (p-1)*(q-1)
     d = 0
@@ -38,8 +57,17 @@ def RSA_cryptography(p: int, q: int, e: int):
     
     return n, e, d
 
-def encryption(n: int, e: int) -> str:
-    #n, phi, e, d = RSA_cryptography(3, 11, 7)
+def encryption(n: int, e: int) -> list[int]:
+    '''
+    An encryption function that requests a string input and outputs a list of numbers corresponding to an encryption mapping.
+
+    Parameters:
+    - n (int): product of primes
+    - e (int): public key
+
+    Returns:
+    - list[int]: returns a list of integers that corresponds to each ASCII character of the string - 96.
+    '''
     string = (input("What is your phrase: "))
     ls = list(string.lower())
     for i, char in enumerate(ls):
@@ -63,12 +91,21 @@ def encryption(n: int, e: int) -> str:
     print("-------------------------------------------------------------------------------------------------")
     return numbers
 
-# TODO: BUG IN THIS FUNCTION
-def decryption(d: int, n: int) -> int:
+
+def decryption(d: int, n: int) -> str:
+    '''
+    A decoding function that requests a list of of numbers and outputs a string corresponding to a decryption mapping.
+
+    Parameters:
+    - d (int): private key
+    - n (int): product of primes
+
+    Returns:
+    - str: returns a decoded string that corresponds to a list of integers following the ASCII character + 96.
+    '''
     num = input("What is your encyrpted phrase: ").strip()
     temp = num.split()
 
-    # probably where I should do the decryption:
     tokens = list(map(int, temp))
 
     decrp = []
